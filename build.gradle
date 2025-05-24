@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+    id 'com.google.protobuf' version "0.9.4"
+}
+
+group = 'com.shared'
+version = '0.0.1-SNAPSHT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+def protobufVersion = '3.25.3'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation "com.google.protobuf:protobuf-java:${protobufVersion}"
+    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// Configuration for the Protobuf plugin
+protobuf {
+    protoc {
+        // Download protoc compiler artifact from Maven Central
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+    }
+    // No 'sourceSets' block needed here if using the default 'src/main/proto'
+    // and not generating gRPC or other special configurations.
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Comment out or remove for now to ensure it's not causing evaluation issues
+/*
+tasks.named('clean') {
+    delete protobuf.generatedFilesBaseDir
+}
+*/

@@ -1,0 +1,78 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar # We want to commit the wrapper jar
+!**/src/main/**/build/ # Exclude build directories under src/main if any non-standard ones appear
+!**/src/test/**/build/ # Exclude build directories under src/test if any non-standard ones appear
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/ # Default output directory for IntelliJ if not using Gradle for builds
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/ # Default output directory for Eclipse
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Maven (if you ever use it or have legacy files)
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*~
+*.bak
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Compiled class files (though 'build/' usually covers this for Gradle)
+*.class
+
+# Jar, War, Ear files (usually generated into 'build/libs/')
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Sensitive information / Environment specific
+# .env
+# application*.properties (if they contain secrets and you use profile-specific non-versioned ones)
+# !application.properties (if you want to commit a default one)
+
+# Specific to Protobuf (though 'build/' should cover generated sources)
+# If generated sources were outside 'build/' you might add:
+# src/generated/
+
+# If you have local configuration files that you don't want to commit
+# local.properties
