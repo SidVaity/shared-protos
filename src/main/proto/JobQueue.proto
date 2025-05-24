@@ -35,8 +35,6 @@ enum TaskType {
   DELETE = 3;
   SEND = 4;
   RECEIVE = 5;
-  // "AWAITING" is more like a status than a type of task.
-  // We'll use a separate TaskExecutionStatus for this.
   OTHER_ACTION = 6; // Generic placeholder if needed
 }
 
@@ -80,8 +78,6 @@ message PriorityFlowPayload {
 
 message DataPopulationPayload {
   TaskMetadata task_metadata = 1;
-  // Add specific fields for DataPopulation here if any.
-  // For example:
   string source_system = 2;
   string target_entity = 3;
   string filter_criteria = 4;
