@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.shared'
-version = '0.0.1-SNAPSHT'
+version = '0.0.1'
 
 java {
     toolchain {
